@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import getUsername from './func';
+import getUsernameFromUrl from './func';
 
 const app = express();
 app.use(cors());
@@ -9,7 +9,7 @@ app.use(cors());
 app.get('/task2c', (req, res) => {
   const input = req.query.username || '';
 
-  const username = getUsername(input);
+  const username = getUsernameFromUrl(input);
 
   let result;
   if (username) {
